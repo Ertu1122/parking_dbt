@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: bronze
+    database: "{{ var('source_catalog') }}"
+    schema: bronze
+    tables:
+      - name: ticket
+        description: Raw parking tickets (entry/exit/payment events)

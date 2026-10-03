@@ -1,0 +1,23 @@
+name: parking_dbt
+version: "1.0.0"
+config-version: 2
+profile: parking_dbt
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  source_catalog: iceberg     # catalog where bronze.ticket lives
+
+models:
+  parking_dbt:
+    +properties:
+      format: "'PARQUET'"
+    silver:
+      +schema: silver
+      +materialized: incremental
+    gold:
+      +schema: gold
+      +materialized: table

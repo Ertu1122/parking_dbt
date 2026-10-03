@@ -1,0 +1,14 @@
+# copy to ~/.dbt/profiles.yml
+parking_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: trino
+      method: none            # ldap / oauth / jwt for Starburst
+      user: dbt
+      host: localhost
+      port: 8080
+      http_scheme: http
+      catalog: iceberg
+      schema: silver          # default; overridden per layer
+      threads: 4

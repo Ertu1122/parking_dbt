@@ -1,0 +1,34 @@
+# dbt build artifacts
+target/
+dbt_packages/
+dbt_modules/
+logs/
+*.log
+.user.yml
+package-lock.yml
+
+# secrets / credentials (keep profiles.yml.example only)
+profiles.yml
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+credentials*.json
+secrets/
+
+# Python / virtualenvs / dependencies
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp

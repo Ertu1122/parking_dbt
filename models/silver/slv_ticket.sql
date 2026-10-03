@@ -1,6 +1,6 @@
 {{ config(
     unique_key = 'ticket_id',
-    incremental_strategy = 'merge'
+    incremental_strategy = 'delete+insert'
 ) }}
 
 with src as (

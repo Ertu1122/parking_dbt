@@ -11,7 +11,7 @@ with src as (
     where id is not null
     {% if is_incremental() %}
       and coalesce(changedDate, paidDate, exitedDate, enteredDate)
-          > (select max(updated_at) - interval '1' day from {{ this }})
+          > (select max(updated_at) - interval 1 day from {{ this }})
     {% endif %}
 ),
 

@@ -1,14 +1,9 @@
-# copy to ~/.dbt/profiles.yml
+# copy to profiles.yml (this project) or ~/.dbt/profiles.yml
 parking_dbt:
   target: dev
   outputs:
     dev:
-      type: trino
-      method: none            # ldap / oauth / jwt for Starburst
-      user: dbt
-      host: localhost
-      port: 8080
-      http_scheme: http
-      catalog: iceberg
-      schema: silver          # default; overridden per layer
-      threads: 4
+      type: duckdb
+      path: parking.duckdb    # path to the .duckdb file; relative to where you run dbt
+      schema: silver           # default; overridden per layer
+      threads: 1

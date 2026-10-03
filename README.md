@@ -1,6 +1,6 @@
 # parking_dbt — bronze → silver → gold demo (dbt-duckdb)
 
-    bronze.ticket ──► silver.slv_ticket (incremental merge, dedup, clean)
+    bronze.ticket ──► silver.slv_ticket (incremental delete+insert, dedup, clean)
                          ├─► gold.gld_daily_park_revenue
                          ├─► gold.gld_hourly_traffic
                          └─► gold.gld_vehicle_type_monthly

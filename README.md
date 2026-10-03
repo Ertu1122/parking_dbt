@@ -6,7 +6,7 @@
                          └─► gold.gld_vehicle_type_monthly
 
 ## Run
-    pip install dbt-trino
+    pip install -r requirements.txt   # dbt-core 1.11 + dbt-trino (needs dbt-core >= 1.8)
     cp profiles.yml.example ~/.dbt/profiles.yml   # edit host/auth
     dbt debug
     dbt build                      # run + test
